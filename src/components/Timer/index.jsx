@@ -6,7 +6,7 @@ import './style.scss'
 
 const Timer = props => {
 
-    const [timerValues, setTimerValues] = useState("012345")
+    const [timerValues, setTimerValues] = useState("000000")
 
     useEffect(_ => {
         setInterval(_ => {
