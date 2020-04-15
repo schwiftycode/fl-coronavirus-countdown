@@ -1,5 +1,7 @@
 import Timer from './Timer'
+import Tick from './Tick'
 
 export {
-    Timer
+    Timer,
+    Tick
 }

@@ -4,13 +4,15 @@ import './style.scss'
 const Tick = props => {
     return (
         <div className="Tick">
-            <div className="number">
-                {props.value[0]}
+            <div className="numbers">
+                <div className="number">
+                    {props.value[0]}
+                </div>
+                <div className="number">
+                    {props.value[1]}
+                </div>
             </div>
-            <div className="number">
-                {props.value[1]}
-            </div>
-            <div>
+            <div className="title">
                 {props.title}
             </div>
         </div>
@@ -19,7 +21,7 @@ const Tick = props => {
 
 Tick.defaultProps = {
     value: "17",
-    title: "hours"
+    title: "title"
 }
 
 export default Tick
