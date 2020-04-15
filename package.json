@@ -9,6 +9,7 @@
     "moment": "^2.24.0",
     "node-sass": "^4.13.1",
     "react": "^16.13.1",
+    "react-adsense": "^0.1.0",
     "react-dom": "^16.13.1",
     "react-pwa-components": "^1.0.17",
     "react-scripts": "3.4.1"
