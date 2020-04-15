@@ -1,4 +1,5 @@
 import React from 'react'
+import { Timer } from '../components'
 
 const Home = props => {
     return (
@@ -7,6 +8,7 @@ const Home = props => {
             <img className="logo" src={require('../assets/images/cqc-logo.png')} />
             <div className="content">
                 {/* Timer Component */}
+                <Timer />
                 {/* Info Text */}
                 <p>To learn more about the ‘Stay at Home’ order issued by Governor Ron Desantis</p>
                 {/* Info Button */}
