@@ -26,7 +26,7 @@ const Timer = props => {
                 minutes = `0${minutes}`
             }
             setTimerValues(`${days}${hours}${minutes}`)
-        }, 1000)
+        }, 100)
     }, [])
 
     return (
