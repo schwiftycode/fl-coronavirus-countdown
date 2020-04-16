@@ -14,7 +14,8 @@ const Home = props => {
                 {/* Info Text */}
                 <p>To learn more about the ‘Stay at Home’ order issued by Governor Ron Desantis</p>
                 {/* Info Button */}
-                <input type="button" value="Click Here" />
+                {/* <input type="button" value="Click Here" /> */}
+                <a href="https://ocalacep.com/images/uploads/site_files/EO_20-91_Safer_At_Home_4-1-20_v1.pdf" target="_blank">Click Here</a>
             </div>
             {/* Ad Space */}
             <div className="ads-container">

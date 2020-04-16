@@ -53,6 +53,20 @@ body {
             cursor: pointer;
             -webkit-appearance: none;
           }
+
+          a {
+            background: rgba(255, 255, 255, 0.9);
+            text-transform: lowercase;
+            color: #8076F7;
+            padding: 10px 26px;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            -webkit-appearance: none;
+            text-decoration: none;
+          }
         }
 
         .ads-container {
