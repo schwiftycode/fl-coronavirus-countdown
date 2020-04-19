@@ -10,14 +10,16 @@
 // To learn more about the benefits of this model and instructions on how to
 // opt-in, read https://bit.ly/CRA-PWA
 
+import { Notifications } from 'react-pwa-components';
+
 const isLocalhost = Boolean(
   window.location.hostname === 'localhost' ||
-    // [::1] is the IPv6 localhost address.
-    window.location.hostname === '[::1]' ||
-    // 127.0.0.0/8 are considered localhost for IPv4.
-    window.location.hostname.match(
-      /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
-    )
+  // [::1] is the IPv6 localhost address.
+  window.location.hostname === '[::1]' ||
+  // 127.0.0.0/8 are considered localhost for IPv4.
+  window.location.hostname.match(
+    /^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/
+  )
 );
 
 export function register(config) {
@@ -43,7 +45,7 @@ export function register(config) {
         navigator.serviceWorker.ready.then(() => {
           console.log(
             'This web app is being served cache-first by a service ' +
-              'worker. To learn more, visit https://bit.ly/CRA-PWA'
+            'worker. To learn more, visit https://bit.ly/CRA-PWA'
           );
         });
       } else {
@@ -58,11 +60,13 @@ function registerValidSW(swUrl, config) {
   navigator.serviceWorker
     .register(swUrl)
     .then(registration => {
+
       registration.onupdatefound = () => {
         const installingWorker = registration.installing;
         if (installingWorker == null) {
           return;
         }
+
         installingWorker.onstatechange = () => {
           if (installingWorker.state === 'installed') {
             if (navigator.serviceWorker.controller) {
@@ -71,8 +75,17 @@ function registerValidSW(swUrl, config) {
               // content until all client tabs are closed.
               console.log(
                 'New content is available and will be used when all ' +
-                  'tabs for this page are closed. See https://bit.ly/CRA-PWA.'
+                'tabs for this page are closed. See https://bit.ly/CRA-PWA.'
               );
+
+              // Show refresh notification for update
+              Notifications.showConfirm("Update Installed", "A new version has been installed and will be available upon reloading the app", _ => {
+                installingWorker.addEventListener('statechange', event => {
+                  window.location.reload()
+                })
+                installingWorker.postMessage({ type: 'SKIP_WAITING' })
+                // installingWorker.postMessage({ type: 'skipWaiting' });
+              }, null, { darkMode: true, dismissTitle: 'Later', confirmTitle: 'Reload' })
 
               // Execute callback
               if (config && config.onUpdate) {
